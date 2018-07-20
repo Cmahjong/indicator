@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:showDividers="middle"
+    app:divider="@color/colorPrimary"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/item1"
+        android:text="指示器样式1"
+      style="@style/text_style"/>
+    <TextView
+        android:id="@+id/item2"
+        android:text="指示器样式2"
+        style="@style/text_style"/>
+    <TextView
+        android:id="@+id/item3"
+        android:text="指示器样式3"
+        style="@style/text_style"/>
+    <TextView
+        android:id="@+id/item4"
+        android:text="指示器样式4"
+        style="@style/text_style"/>
+</android.support.v7.widget.LinearLayoutCompat>
