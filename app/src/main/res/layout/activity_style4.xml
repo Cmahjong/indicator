@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
-    tools:context="com.yj.indicator.xxxindicator.Style2Activity">
+    tools:context="com.yj.indicator.xxxindicator.Style4Activity">
     <RelativeLayout
         android:background="#FF0077"
         android:layout_width="match_parent"
@@ -21,12 +21,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
-        <com.yj.indicator.library.RectIndicatorView
+        <com.yj.indicator.library.CircleMoveIndicatorView
             android:background="#ff0077"
             android:id="@+id/indicator_view"
-            android:layout_width="match_parent"
-            android:layout_height="20dp">
-        </com.yj.indicator.library.RectIndicatorView>
+            app:circleRadioSize="5dp"
+            app:circleSpace="10dp"
+            android:paddingLeft="10dp"
+            app:smoothAnimation="true"
+            android:paddingRight="10dp"
+            app:normalColor="#ffe100"
+            app:selectedColor="#00bfff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </com.yj.indicator.library.CircleMoveIndicatorView>
     </RelativeLayout>
 
 </LinearLayout>

@@ -72,32 +72,7 @@ class RectIndicatorView : LinearLayout {
             }
 
             override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {
-//                Log.e("p0", p0.toString())
-//                Log.e("p1", p1.toString())
-//                if (p1 != 0f) {
-//                    if (p0 == count - 1) {
-//                        (getChildAt(p0) as ImageView).scaleX = 1-p1
-//                        (getChildAt(p0) as ImageView).scaleY = 1-p1
-//                        (getChildAt(0) as ImageView).scaleX = 2 - p1
-//                        (getChildAt(0) as ImageView).scaleY = 2 - p1
-//                    } else {
-//                        (getChildAt(p0) as ImageView).scaleX = 1-p1
-//                        (getChildAt(p0) as ImageView).scaleY = 1-p1
-//                        (getChildAt(p0 + 1) as ImageView).scaleX = 2 - p1
-//                        (getChildAt(p0 + 1) as ImageView).scaleY = 2 - p1
-//                    }
-//                } else {
-//                    (getChildAt(p0) as ImageView).scaleX = 1f
-//                    (getChildAt(p0) as ImageView).scaleY = 1f
-//                    if (p0 == 0) {
-//                        (getChildAt(count-1) as ImageView).scaleX = 1f
-//                        (getChildAt(count-1) as ImageView).scaleY = 1f
-//                    } else {
-//                        (getChildAt(p0-1) as ImageView).scaleX = 1f
-//                        (getChildAt(p0-1) as ImageView).scaleY = 1f
-//                    }
-//
-//                }
+
 
             }
 

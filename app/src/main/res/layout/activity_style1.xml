@@ -24,8 +24,8 @@
         <com.yj.indicator.library.CircleIndicatorView
             android:background="#ff0077"
             android:id="@+id/indicator_view"
-            android:layout_width="match_parent"
-            android:layout_height="20dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         </com.yj.indicator.library.CircleIndicatorView>
     </RelativeLayout>
 

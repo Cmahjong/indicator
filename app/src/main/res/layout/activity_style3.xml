@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
-    tools:context="com.yj.indicator.xxxindicator.Style2Activity">
+    tools:context="com.yj.indicator.xxxindicator.Style3Activity">
     <RelativeLayout
         android:background="#FF0077"
         android:layout_width="match_parent"
@@ -21,12 +21,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
-        <com.yj.indicator.library.RectIndicatorView
-            android:background="#ff0077"
+        <com.yj.indicator.library.TextIndicatorView
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:background="#FF1"
             android:id="@+id/indicator_view"
-            android:layout_width="match_parent"
-            android:layout_height="20dp">
-        </com.yj.indicator.library.RectIndicatorView>
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content">
+        </com.yj.indicator.library.TextIndicatorView>
     </RelativeLayout>
 
 </LinearLayout>

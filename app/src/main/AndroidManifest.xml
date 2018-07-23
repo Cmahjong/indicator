@@ -22,6 +22,10 @@
         </activity>
         <activity android:name=".Style2Activity">
         </activity>
+        <activity android:name=".Style3Activity">
+        </activity>
+        <activity android:name=".Style4Activity">
+        </activity>
     </application>
 
 </manifest>

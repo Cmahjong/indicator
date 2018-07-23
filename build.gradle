@@ -4,10 +4,10 @@ buildscript {
     ext {
         kotlin_version = '1.2.30'
         ext_android = [
-                compileSdkVersion: 28,
+                compileSdkVersion: 27,
                 applicationId    : "com.yj.banner.xxxbanner",
                 minSdkVersion    : 16,
-                targetSdkVersion : 28,
+                targetSdkVersion : 27,
                 versionCode      : 1,
                 versionName      : "1.0"
         ]

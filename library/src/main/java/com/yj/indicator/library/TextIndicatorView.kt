@@ -1,14 +1,14 @@
 package com.yj.indicator.library
 
 import android.content.Context
+import android.graphics.Color
 import android.support.v4.view.PagerAdapter
 import android.support.v4.view.ViewPager
 import android.util.AttributeSet
-import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
-import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 
 /**
  * desc:普通的指示器
@@ -16,11 +16,10 @@ import android.widget.LinearLayout
  *
  * @author yinYin
  */
-class CircleIndicatorView : LinearLayout {
+class TextIndicatorView : LinearLayout {
     var viewPager: ViewPager? = null
     private var adapter: PagerAdapter? = null
     private var count: Int = 0
-    private var lastValue = -1
     var orientationStyle = ORIENTATION_DEFAULT
     var indicatorPosition = POSITION_DEFAULT
         set(value) {
@@ -28,12 +27,11 @@ class CircleIndicatorView : LinearLayout {
             gravity = value
             invalidate()
         }
-    var mIndicatorLeftMargin = LEFT_MARGIN_DEFAULT
-    var mIndicatorRightMargin = RIGHT_MARGIN_DEFAULT
-    var mIndicatorSize: Float = 5F
-    var mIndicatorSelectedResId: Int = R.drawable.gray_radius
-    var mIndicatorUnselectedResId: Int = R.drawable.white_radius
-
+    var mIndicatorSpace = 0F
+    var mIndicatorSelectedTextSize: Float = 18F
+    var mIndicatorUnselectedTextSize: Float = 12F
+    var mIndicatorSelectedColor: Int = Color.parseColor("#FFFFFFFF")
+    var mIndicatorUnselectedColor: Int = Color.parseColor("#7A000000")
     constructor(context: Context) : super(context) {
         init()
     }
@@ -58,18 +56,20 @@ class CircleIndicatorView : LinearLayout {
         }
         adapter = viewPager?.adapter
         count = adapter?.count ?: 0
-        for (i in 0 until count) {
-            val imageView = ImageView(context)
-            imageView.scaleType = ImageView.ScaleType.CENTER_CROP
-            val params = LinearLayout.LayoutParams(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorSize, context.resources.displayMetrics).toInt(), TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorSize, context.resources.displayMetrics).toInt())
-            params.leftMargin = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorLeftMargin, context.resources.displayMetrics).toInt()
-            params.rightMargin = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorRightMargin, context.resources.displayMetrics).toInt()
+        for (i in 0 until 2) {
+            val textView = TextView(context)
+            val params = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+            params.leftMargin = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorSpace, context.resources.displayMetrics).toInt()
             if (i == 0) {
-                imageView.setImageResource(mIndicatorSelectedResId)
+                textView.setTextColor(mIndicatorSelectedColor)
+                textView.textSize =mIndicatorSelectedTextSize
+                textView.text = ((viewPager?.currentItem?:0)+1).toString()
             } else {
-                imageView.setImageResource(mIndicatorUnselectedResId)
+                textView.setTextColor(mIndicatorUnselectedColor)
+                textView.textSize =mIndicatorUnselectedTextSize
+                textView.text = "/$count"
             }
-            addView(imageView, params)
+            addView(textView, params)
         }
         viewPager!!.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(p0: Int) {
@@ -81,15 +81,7 @@ class CircleIndicatorView : LinearLayout {
             }
 
             override fun onPageSelected(p0: Int) {
-                (getChildAt(p0) as ImageView).setImageResource(mIndicatorSelectedResId)
-                for (i in 0 until count) {
-                    if (i == p0) {
-                        (getChildAt(i) as ImageView).setImageResource(mIndicatorSelectedResId)
-                    } else {
-                        (getChildAt(i) as ImageView).setImageResource(mIndicatorUnselectedResId)
-                    }
-                }
-
+                (getChildAt(0) as TextView).text=(p0+1).toString()
             }
         })
     }
@@ -97,8 +89,6 @@ class CircleIndicatorView : LinearLayout {
     companion object {
         const val ORIENTATION_DEFAULT = LinearLayout.HORIZONTAL
         const val POSITION_DEFAULT = Gravity.CENTER
-        const val LEFT_MARGIN_DEFAULT = 5f
-        const val RIGHT_MARGIN_DEFAULT = 5f
 
     }
 }

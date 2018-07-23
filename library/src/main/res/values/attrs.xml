@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <declare-styleable name="CircleMoveIndicatorView">
+       <attr name="normalColor" format="color">#ffffff</attr>
+       <attr name="selectedColor" format="color">#353535</attr>
+       <attr name="circleRadioSize" format="dimension">5</attr>
+       <attr name="circleSpace" format="dimension">5</attr>
+       <attr name="smoothAnimation" format="boolean">false</attr>
+   </declare-styleable>
+</resources>
