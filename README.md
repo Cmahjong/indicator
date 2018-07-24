@@ -32,6 +32,7 @@ Step 2. Add the dependency
   （1）CircleIndicatorView
   
   ![img](/img/1.png)
+  
 
  （2）RectIndicatorView
  
@@ -48,5 +49,6 @@ Step 2. Add the dependency
    ![img](/img/4_1.png)
   
   
+  最后都要添加一个view.start就可以了
 
 viewpage的轻量级指示器（有需求请在issues里面提，到时候会添加上去的）
