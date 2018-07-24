@@ -5,7 +5,25 @@ init Indicator
 
 效果图
 
+普通圆形指示器
+
 ![sample](/gif/1.gif)
+
+普通矩形指示器
+
+![sample](/gif/2.gif)
+
+普通文字指示器
+
+![sample](/gif/3.gif)
+
+平滑圆形指示器
+
+![sample](/gif/4.gif)
+
+内外阴影文字指示器指示器
+
+![sample](/gif/5.gif)
 
 如何使用
 
