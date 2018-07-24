@@ -5,13 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorPrimary"
+    android:orientation="vertical"
     tools:context="com.yj.indicator.xxxindicator.Style4Activity">
+
     <RelativeLayout
-        android:background="#FF0077"
         android:layout_width="match_parent"
-        android:layout_height="264dp">
+        android:layout_height="264dp"
+        android:background="#FF0077">
+
         <com.yj.indicator.xxxindicator.view.AutoScrollViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
@@ -21,18 +23,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
+
         <com.yj.indicator.library.CircleMoveIndicatorView
-            android:background="#ff0077"
             android:id="@+id/indicator_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ff0077"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             app:circleRadioSize="5dp"
             app:circleSpace="10dp"
-            android:paddingLeft="10dp"
-            app:smoothAnimation="true"
-            android:paddingRight="10dp"
             app:normalColor="#ffe100"
             app:selectedColor="#00bfff"
+            app:smoothAnimation="true">
+        </com.yj.indicator.library.CircleMoveIndicatorView>
+
+        <com.yj.indicator.library.CircleMoveIndicatorView
+            android:id="@+id/indicator_horizontal_view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="#ff0077"
+            android:padding="10dp"
+            app:circleRadioSize="5dp"
+            app:circleSpace="10dp"
+            app:normalColor="#ffe100"
+            app:selectedColor="#00bfff"
+            app:smoothAnimation="true">
         </com.yj.indicator.library.CircleMoveIndicatorView>
     </RelativeLayout>
 

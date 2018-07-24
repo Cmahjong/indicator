@@ -29,7 +29,14 @@ class Style4Activity : AppCompatActivity() {
             currentPosition = 0
 
         }
+        indicator_horizontal_view.apply {
+            viewPager = view_pager
+            orientationStyle = LinearLayout.HORIZONTAL
+            currentPosition = 0
+
+        }
         indicator_view.start()
+        indicator_horizontal_view.start()
         view_pager.startAutoScroll()
         view_pager.isBorderAnimation = false
         view_pager.interval = 3000

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    app:showDividers="middle"
+    app:showDividers="middle|end"
     app:divider="@color/colorPrimary"
     tools:context=".MainActivity">
     <TextView
@@ -24,5 +24,9 @@
     <TextView
         android:id="@+id/item4"
         android:text="指示器样式4"
+        style="@style/text_style"/>
+    <TextView
+        android:id="@+id/item5"
+        android:text="指示器样式5"
         style="@style/text_style"/>
 </android.support.v7.widget.LinearLayoutCompat>

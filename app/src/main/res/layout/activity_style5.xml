@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context="com.yj.indicator.xxxindicator.Style3Activity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="264dp"
+        android:background="#FF0077">
+
+        <com.yj.indicator.xxxindicator.view.AutoScrollViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="264dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <com.yj.indicator.library.MagicTextIndicatorView
+            android:id="@+id/indicator_view_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#FF1"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+        </com.yj.indicator.library.MagicTextIndicatorView>
+        <com.yj.indicator.library.MagicTextIndicatorView
+            android:id="@+id/indicator_view_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="#C7C7C7"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+        </com.yj.indicator.library.MagicTextIndicatorView>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".Style4Activity">
         </activity>
+        <activity android:name=".Style5Activity">
+        </activity>
     </application>
 
 </manifest>

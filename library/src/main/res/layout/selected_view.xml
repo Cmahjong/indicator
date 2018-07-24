@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yj.indicator.library.widget.MagicTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/magic_selected_root"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    tools:text="5"
+    app:innerShadowColor="#80000000"
+    android:textStyle="bold"
+    android:textColor="#FFB6813A"
+    app:innerShadowDx="1dp"
+    app:innerShadowRadius="5dp"
+    android:layout_height="wrap_content">
+
+</com.yj.indicator.library.widget.MagicTextView>
