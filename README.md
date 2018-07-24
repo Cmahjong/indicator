@@ -2,6 +2,11 @@
 init Indicator  
 [![](https://jitpack.io/v/yinjinyj/indicator.svg)](https://jitpack.io/#yinjinyj/indicator)
 
+
+效果图
+
+![sample](/gif/1.gif)
+
 如何使用
 
 Add it in your root build.gradle at the end of repositories:
