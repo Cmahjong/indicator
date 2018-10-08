@@ -4,7 +4,6 @@ import android.content.Context
 import android.support.v4.view.PagerAdapter
 import android.support.v4.view.ViewPager
 import android.util.AttributeSet
-import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.widget.ImageView
@@ -31,6 +30,7 @@ class CircleIndicatorView : LinearLayout {
     var mIndicatorLeftMargin = LEFT_MARGIN_DEFAULT
     var mIndicatorRightMargin = RIGHT_MARGIN_DEFAULT
     var mIndicatorSize: Float = 5F
+    var mSelectedIndicatorSize: Float = 5F
     var mIndicatorSelectedResId: Int = R.drawable.gray_radius
     var mIndicatorUnselectedResId: Int = R.drawable.white_radius
 
@@ -61,7 +61,11 @@ class CircleIndicatorView : LinearLayout {
         for (i in 0 until count) {
             val imageView = ImageView(context)
             imageView.scaleType = ImageView.ScaleType.CENTER_CROP
-            val params = LinearLayout.LayoutParams(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorSize, context.resources.displayMetrics).toInt(), TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorSize, context.resources.displayMetrics).toInt())
+            var indicatorSize = mIndicatorSize
+            if (i == 0) {
+                indicatorSize = mSelectedIndicatorSize
+            }
+            val params = LinearLayout.LayoutParams(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, indicatorSize, context.resources.displayMetrics).toInt(), TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, indicatorSize, context.resources.displayMetrics).toInt())
             params.leftMargin = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorLeftMargin, context.resources.displayMetrics).toInt()
             params.rightMargin = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorRightMargin, context.resources.displayMetrics).toInt()
             if (i == 0) {
@@ -84,9 +88,19 @@ class CircleIndicatorView : LinearLayout {
                 (getChildAt(p0) as ImageView).setImageResource(mIndicatorSelectedResId)
                 for (i in 0 until count) {
                     if (i == p0) {
+                        val layoutParams = (getChildAt(i) as ImageView).layoutParams.apply {
+                            width = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mSelectedIndicatorSize, context.resources.displayMetrics).toInt()
+                            height = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mSelectedIndicatorSize, context.resources.displayMetrics).toInt()
+                        }
                         (getChildAt(i) as ImageView).setImageResource(mIndicatorSelectedResId)
+                        (getChildAt(i) as ImageView).layoutParams = layoutParams
                     } else {
+                        val layoutParams = (getChildAt(i) as ImageView).layoutParams.apply {
+                            width = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorSize, context.resources.displayMetrics).toInt()
+                            height = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorSize, context.resources.displayMetrics).toInt()
+                        }
                         (getChildAt(i) as ImageView).setImageResource(mIndicatorUnselectedResId)
+                        (getChildAt(i) as ImageView).layoutParams = layoutParams
                     }
                 }
 

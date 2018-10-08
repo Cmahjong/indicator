@@ -25,10 +25,11 @@ class Style1Activity : AppCompatActivity() {
         indicator_view.apply {
             viewPager=view_pager
             orientationStyle= LinearLayout.HORIZONTAL
-            indicatorPosition= Gravity.LEFT
-            mIndicatorLeftMargin= 5f
-            mIndicatorRightMargin= 5f
-            mIndicatorSize= 10f
+            indicatorPosition= Gravity.CENTER
+            mIndicatorLeftMargin= 8f
+            mIndicatorRightMargin= 8f
+            mIndicatorSize= 6f
+            mSelectedIndicatorSize= 8f
             mIndicatorSelectedResId= R.drawable.gray_radius1
             mIndicatorUnselectedResId= R.drawable.white_radius1
         }
