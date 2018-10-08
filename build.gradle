@@ -8,8 +8,8 @@ buildscript {
                 applicationId    : "com.yj.banner.xxxbanner",
                 minSdkVersion    : 16,
                 targetSdkVersion : 27,
-                versionCode      : 1,
-                versionName      : "1.0"
+                versionCode      : 2,
+                versionName      : "1.0.1"
         ]
         ext_dependencies = [
                 kotlin_jre7: "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
